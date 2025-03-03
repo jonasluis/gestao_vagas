@@ -18,10 +18,10 @@ import java.util.UUID;
 @Entity(name = "company")
 public class CompanyEntity {
 
-    @jakarta.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID Id;
-    
+
     @NotBlank
     @Pattern(regexp = "^[^\\s]+$", message = "O campo [username] não deve conter espaços")
     private String username;
