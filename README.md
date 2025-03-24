@@ -2,8 +2,6 @@
 
 A comprehensive job management system built with Spring Boot, designed to connect companies and job seekers.
 
-![Job Management Platform](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&auto=format&fit=crop&q=80)
-
 ## 🎯 Overview
 
 Gestão Vagas is a robust platform that facilitates job posting, application management, and candidate tracking. It provides separate interfaces for companies and candidates, ensuring a streamlined recruitment process.
