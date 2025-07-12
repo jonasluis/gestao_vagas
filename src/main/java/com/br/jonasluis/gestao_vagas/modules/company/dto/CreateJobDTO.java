@@ -1,4 +1,13 @@
 package com.br.jonasluis.gestao_vagas.modules.company.dto;
 
-public record CreateJobDTO(String description, String benefits, String level) {
+import io.swagger.v3.oas.annotations.media.Schema;
+
+public record CreateJobDTO(
+        @Schema(example = "Vaga para pessoa desenvolvedora Junior")
+        String description,
+        @Schema(example = "GYMPASS, Plano de Saúde, VT, VA e VR")
+        String benefits,
+        @Schema(example = "JUNIOR")
+        String level
+) {
 }
