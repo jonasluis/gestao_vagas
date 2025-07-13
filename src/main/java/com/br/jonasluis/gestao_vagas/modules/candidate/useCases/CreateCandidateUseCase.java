@@ -6,6 +6,7 @@ import com.br.jonasluis.gestao_vagas.modules.candidate.repositories.CandidateRep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CreateCandidateUseCase {
@@ -16,6 +17,7 @@ public class CreateCandidateUseCase {
     @Autowired
     private CandidateRepository candidateRepository;
 
+    @Transactional
     public CandidateEntity execute(CandidateEntity candidateEntity){
 
         this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(),
