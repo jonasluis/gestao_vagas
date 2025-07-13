@@ -31,9 +31,9 @@ public class ApplyJobEntity {
     private CandidateEntity candidateEntity;
 
     @Column(name = "id_job")
-    private UUID idJob;
+    private UUID jobId;
     @Column(name = "id_candidate")
-    private UUID idCandidate;
+    private UUID candidateId;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

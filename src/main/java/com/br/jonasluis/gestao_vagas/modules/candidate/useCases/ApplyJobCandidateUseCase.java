@@ -2,6 +2,7 @@ package com.br.jonasluis.gestao_vagas.modules.candidate.useCases;
 
 import com.br.jonasluis.gestao_vagas.exceptions.JobNotFoundException;
 import com.br.jonasluis.gestao_vagas.exceptions.UserNotFoundException;
+import com.br.jonasluis.gestao_vagas.modules.candidate.entity.ApplyJobEntity;
 import com.br.jonasluis.gestao_vagas.modules.candidate.repositories.ApplyJobRepository;
 import com.br.jonasluis.gestao_vagas.modules.candidate.repositories.CandidateRepository;
 import com.br.jonasluis.gestao_vagas.modules.company.repositories.JobRepository;
@@ -20,7 +21,7 @@ public class ApplyJobCandidateUseCase {
     @Autowired
     private ApplyJobRepository applyJobRepository;
 
-    public void execute(UUID idCandidate, UUID idJob) {
+    public ApplyJobEntity execute(UUID idCandidate, UUID idJob) {
         this.candidateRepository.findById(idCandidate)
                 .orElseThrow(() ->{
                     throw new UserNotFoundException();
@@ -30,7 +31,12 @@ public class ApplyJobCandidateUseCase {
                 .orElseThrow(() -> {
                     throw  new JobNotFoundException();
                 });
+        var applyJob = ApplyJobEntity.builder()
+                .jobId(idJob)
+                .candidateId(idCandidate).build();
 
+        applyJob = applyJobRepository.save(applyJob);
+        return applyJob;
 
     }
 }
