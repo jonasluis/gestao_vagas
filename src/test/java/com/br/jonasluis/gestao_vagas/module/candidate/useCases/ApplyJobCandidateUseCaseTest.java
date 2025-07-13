@@ -2,7 +2,7 @@ package com.br.jonasluis.gestao_vagas.module.candidate.useCases;
 
 import com.br.jonasluis.gestao_vagas.exceptions.JobNotFoundException;
 import com.br.jonasluis.gestao_vagas.exceptions.UserNotFoundException;
-import com.br.jonasluis.gestao_vagas.modules.candidate.CandidateEntity;
+import com.br.jonasluis.gestao_vagas.modules.candidate.entity.CandidateEntity;
 import com.br.jonasluis.gestao_vagas.modules.candidate.repositories.CandidateRepository;
 import com.br.jonasluis.gestao_vagas.modules.candidate.useCases.ApplyJobCandidateUseCase;
 import com.br.jonasluis.gestao_vagas.modules.company.repositories.JobRepository;

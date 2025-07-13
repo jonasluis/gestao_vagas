@@ -1,7 +1,7 @@
 package com.br.jonasluis.gestao_vagas.modules.candidate.useCases;
 
 import com.br.jonasluis.gestao_vagas.exceptions.UserFoundException;
-import com.br.jonasluis.gestao_vagas.modules.candidate.CandidateEntity;
+import com.br.jonasluis.gestao_vagas.modules.candidate.entity.CandidateEntity;
 import com.br.jonasluis.gestao_vagas.modules.candidate.repositories.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

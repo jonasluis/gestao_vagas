@@ -1,9 +1,7 @@
 package com.br.jonasluis.gestao_vagas.modules.candidate.controllers;
 
-import com.br.jonasluis.gestao_vagas.exceptions.UserFoundException;
-import com.br.jonasluis.gestao_vagas.modules.candidate.CandidateEntity;
+import com.br.jonasluis.gestao_vagas.modules.candidate.entity.CandidateEntity;
 import com.br.jonasluis.gestao_vagas.modules.candidate.dto.ProfileCandidateResponseDTO;
-import com.br.jonasluis.gestao_vagas.modules.candidate.repositories.CandidateRepository;
 import com.br.jonasluis.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import com.br.jonasluis.gestao_vagas.modules.candidate.useCases.ListAllJobsByFilterUseCase;
 import com.br.jonasluis.gestao_vagas.modules.candidate.useCases.ProfileCandidateUseCase;
