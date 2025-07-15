@@ -15,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,14 +42,20 @@ public class JobController {
             })
     })
     @SecurityRequirement(name = "jwt_auth")
-    public JobEntity create(@Valid @RequestBody CreateJobDTO createJobDTO, HttpServletRequest request){
+    public ResponseEntity<Object> create(@Valid @RequestBody CreateJobDTO createJobDTO, HttpServletRequest request){
         var companyId = request.getAttribute("company_id");
+
+        try {
 
         var jobEntity = JobEntity.builder()
                 .benefits(createJobDTO.benefits())
                 .companyId(UUID.fromString(companyId.toString()))
                 .description(createJobDTO.description())
                 .level(createJobDTO.level()).build();
-        return this.createJobUseCase.execute(jobEntity);
+        var result = this.createJobUseCase.execute(jobEntity);
+           return ResponseEntity.ok().body(result);
+        } catch (Exception e) {
+            return  ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
